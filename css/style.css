@@ -34,12 +34,66 @@ https://github.com/google/material-design-icons
 
 /* Custom Layouts */
 
-* {
+body * {
 	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 }
 
-.mdi {
-	font-size: 2em;
-	color: red;
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  line-height: 1em;
+  margin: 0.5em 0;
+}
+body h1 {
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+}
+h2 {
+  font-size: 2.5em;
+}
+h3 {
+  font-size: 2em;
+}
+h4 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+h5 {
+}
+h6 {
+}
+body p {
+  line-height: 1.25em;
+  margin: 0.25em 0;
+  padding: 0;
+}
+
+.toolbar-title {
+  color: #fff;
+  font-size: 2em;
+  margin: auto;
+}
+.md-toolbar {
+  background-color: #8BC34A;
+}
+
+.containers {
+}
+
+.account-box {
+  margin: auto 0;
+}
+.account-box button {
+  background: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 0.75em;
+}
+.account-box .mdi {
+  vertical-align: bottom;
+}
+.account-img {
+  height: 2em;
+  border-radius: 100%;
+  vertical-align: middle;
 }

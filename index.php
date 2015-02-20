@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="JimelApp">
-  <head>
-		<title></title>
-		<meta charset="UTF-8">
+<?php
+// index.php    
 
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css">
-		<link rel="stylesheet" href="css/materialdesignicons.css">
-		<link rel="stylesheet" href="css/style.css">
-  </head>
-  <body layout="column" ng-controller="AppCtrl">
-  	<!-- Top Header -->
-    <md-toolbar layout="row">
-      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <h1>Jimel</h1>
-    </md-toolbar>
+// This is necessary when index.php is not in the root folder, but in some subfolder...
+// We compare $requestURL and $scriptName to remove the inappropriate values
+$requestURI = explode('/', $_SERVER['REQUEST_URI']);
+$scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
 
-    <div layout="row" flex>
-    	<!-- Side Navigation -->
-      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
-        
-      </md-sidenav>
+for ($i= 0; $i < sizeof($scriptName); $i++) {
+  if ($requestURI[$i] == $scriptName[$i]) {
+    unset($requestURI[$i]);
+  }
+}
 
-      <!-- Main Content Area -->
-      <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding">
-          
+$command = array_values($requestURI);
+
+include_once("template-head.php");
+
+switch($command[0]) {
+  case 'login' :
+    include_once("login-form.php");
+    break;
+  case 'logout' :
+    include_once("logout.php");
+    break;
+
+  case 'profile' :
+    require_once("profile.php"); // We need this file
+    profile($command[1]);
+    break;
+
+  case 'myprofile' :
+    require_once("profile.php"); // We need this file
+    myProfile();
+    break;
+
+  default:
+    include_once("home.php");
+    break;
+}
+
+include_once("template-foot.php");
 
 
-
-<i class="mdi mdi-account"></i>  <!-- bell -->
-
-
-
-
-
-        </md-content>
-        <!-- End of Main Content -->
-
-      </div>
-    </div>
-    <!-- Angular Material Dependencies -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
-
-    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
-</html>
+?>
