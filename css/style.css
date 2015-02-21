@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:500,900,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,900);
 
 /* Angular Material */
 .menuBtn {
@@ -32,10 +32,11 @@ https://github.com/google/material-design-icons
   background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGcgaWQ9IkhlYWRlciI+CiAgICA8Zz4KICAgICAgICA8cmVjdCB4PSItNjE4IiB5PSItMjIzMiIgZmlsbD0ibm9uZSIgd2lkdGg9IjE0MDAiIGhlaWdodD0iMzYwMCIvPgogICAgPC9nPgo8L2c+CjxnIGlkPSJMYWJlbCI+CjwvZz4KPGcgaWQ9Ikljb24iPgogICAgPGc+CiAgICAgICAgPHJlY3QgZmlsbD0ibm9uZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CiAgICAgICAgPHBhdGggZD0iTTMsMThoMTh2LTJIM1YxOHogTTMsMTNoMTh2LTJIM1YxM3ogTTMsNnYyaDE4VjZIM3oiIHN0eWxlPSJmaWxsOiNmM2YzZjM7Ii8+CiAgICA8L2c+CjwvZz4KPGcgaWQ9IkdyaWQiIGRpc3BsYXk9Im5vbmUiPgogICAgPGcgZGlzcGxheT0iaW5saW5lIj4KICAgIDwvZz4KPC9nPgo8L3N2Zz4=) no-repeat  center center;
 }
 
+
 /* Custom Layouts */
 
 body * {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 }
 
@@ -71,6 +72,7 @@ body p {
 .toolbar-title {
   color: #fff;
   font-size: 2em;
+  font-weight: 300;
   margin: auto;
 }
 .md-toolbar {
@@ -80,20 +82,46 @@ body p {
 .containers {
 }
 
-.account-box {
-  margin: auto 0;
+.account-box .logged-in {
+  background-repeat: no-repeat;
+  min-height: 203px;
+}
+.account-box md-toolbar.logged-in {
+  height: 101px;
+}
+.account-box .user-name {
+  font-size: 24px;
+  font-weight: 300;
+}
+.account-box .buttons {
+  height: 56px;
 }
 .account-box button {
   background: transparent;
   border: none;
   color: #FFF;
-  font-size: 0.75em;
+  float: right;
+  margin: 16px 0 16px 16px;
+  padding: 0;
 }
+.account-box button:nth-child(1) {
+  float: left;
+}
+.account-box button:nth-child(2) {
+  margin-right: 16px;
+}
+
 .account-box .mdi {
   vertical-align: bottom;
+  font-size: 24px;
 }
 .account-img {
   height: 2em;
   border-radius: 100%;
   vertical-align: middle;
 }
+
+/* Form Layouts */
+md-input-container.md-default-theme label {
+}
+
