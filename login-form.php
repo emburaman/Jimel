@@ -22,9 +22,12 @@
       <input type="password" ng-model="user.password">
     </md-input-container>
 
-    <md-button class="md-raised md-primary">Primary</md-button>
+    <md-button class="md-raised md-primary">Entrar</md-button>
 
-
-    <md-button/>
+    <div>
+    <md-button ><i class="mdi mdi-facebook-box"></i> Entrar com Facebook</md-button>
+    <md-button ><i class="mdi mdi-google-plus"></i> Entrar com sua conta Google</md-button>
+    </div>
+    <md-button >Registrar</md-button>
   </form>
 </md-content>
