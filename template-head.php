@@ -31,7 +31,7 @@
               <md-button ng-click="close()" class="">
                 <i class="mdi mdi-arrow-left"></i>
               </md-button>
-              <md-button><i class="mdi mdi-login"></i></md-button>
+              <md-button><a href="/login"><i class="mdi mdi-login"></i></a></md-button>
             </div>
           </md-toolbar>
 

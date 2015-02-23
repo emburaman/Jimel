@@ -121,7 +121,17 @@ body p {
   vertical-align: middle;
 }
 
-/* Form Layouts */
-md-input-container.md-default-theme label {
+md-toolbar button a {
+  color: #FFF;
+  text-decoration: none;
 }
 
+
+/* Form Layouts */
+body .md-form button.md-button {
+  min-width: 10em;
+}
+
+body .md-toast.md-default-theme.md-warn {
+  background-color: red;
+}
