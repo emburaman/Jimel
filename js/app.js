@@ -54,3 +54,57 @@ app.controller('ToastCtrl', function($scope, $mdToast) {
     $mdToast.hide();
   };
 });
+
+
+
+// // "myAwesomeDropzone" is the camelized version of the HTML element's ID
+// Dropzone.options.profilePicture = {
+//   paramName: "file", // The name that will be used to transfer the file
+//   maxFilesize: 0.256, // MB
+//   maxFiles: 1,
+// 	addRemoveLinks: true,
+//   // removedfile: function(file) {
+//   //   deletefile(file.name);
+//   // },
+
+//   accept: function(file, done) {
+//     if (file.name == "justinbieber.jpg") {
+//       done("Naha, you don't.");
+//     }
+//     else { done(); }
+//   },
+
+//   init: function() {
+//     this.filespath.removeAttribute('multiple');
+//     this.on("success", function(file, response) {
+//       file.serverId = response; 
+
+      
+//     });
+//     this.on("removedfile", function(file) {
+//       deletefile(file.name);
+//     });
+//     this.on("maxfilesexceeded", function(file){
+//         alert("No more files please!");
+//     });
+//   }  
+// };
+
+// // Function to call delete.php file  - Added by InfoTuts.com
+// function deletefile(value) {
+//   var xmlhttp;
+//   if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+//     xmlhttp=new XMLHttpRequest();
+//   } else {// code for IE6, IE5
+//     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+//   }
+
+//   xmlhttp.onreadystatechange=function() {
+//     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+//       //alert(xmlhttp.responseText);
+//     }
+//   }
+
+//   xmlhttp.open("GET","file_delete.php?filename="+value,true);
+//   xmlhttp.send();
+// }

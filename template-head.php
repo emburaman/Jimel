@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css">
-		<link rel="stylesheet" href="css/materialdesignicons.css">
+    <link rel="stylesheet" href="css/materialdesignicons.css">
 		<link rel="stylesheet" href="css/style.css">
   </head>
   <body layout="column" ng-controller="AppCtrl">
@@ -31,18 +31,18 @@
               <md-button ng-click="close()" class="">
                 <i class="mdi mdi-arrow-left"></i>
               </md-button>
-              <md-button><a href="/login"><i class="mdi mdi-login"></i></a></md-button>
+              <md-button><a href="/entrar"><i class="mdi mdi-login"></i></a></md-button>
             </div>
           </md-toolbar>
 
           <?php } else { ?>
-          <md-content class="logged-in" ng-controller="LeftCtrl" style="background-image: url('img/account.jpg')">
+          <md-content class="logged-in" ng-controller="LeftCtrl" style="background-image: url('<?php echo $_SESSION['jimel']['photo_path']; ?>')">
             <div class="buttons">
               <md-button ng-click="close()" class="">
                 <i class="mdi mdi-arrow-left"></i>
               </md-button>
-              <md-button><a href="/logout"><i class="mdi mdi-logout"></i></a></md-button>
-              <md-button><i class="mdi mdi-pencil"></i></md-button>
+              <md-button><a href="/sair"><i class="mdi mdi-logout"></i></a></md-button>
+              <md-button><a href="/editarmeuperfil"><i class="mdi mdi-pencil"></i></a></md-button>
             </div>
           </md-content>
           <md-toolbar class="md-theme-indigo">

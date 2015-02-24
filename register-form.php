@@ -35,7 +35,7 @@ if (isset($_POST['userid']) || isset($_POST['password'])) {
 }
 ?>
 
-<h4>Login</h4>
+<h4>Registrar</h4>
 <md-content class="md-padding md-form">
   <form novalidate name="userForm" method="POST" action="/login" <?php if ($err == true) { echo 'ng-init="showErrorToast(\'' . $errmsg . '\')"'; } ?> >
     <div layout layout-sm="column">
@@ -48,13 +48,36 @@ if (isset($_POST['userid']) || isset($_POST['password'])) {
       </md-input-container>
 
 	    <md-input-container flex>
-	      <label>Senha</label>
+ 	      <label>Senha</label>
 	      <input type="password" name="password" ng-model="user.password">
 	      <div ng-messages="userForm.password.$error">
 	        <div ng-message="required">Este campo é requerido.</div>
 	      </div>
 	    </md-input-container>
+	    <md-input-container flex>
+ 	      <label>Repita a Senha</label>
+	      <input type="password" name="password" ng-model="user.passwordrepeat">
+	      <div ng-messages="userForm.passwordrepeat.$error">
+	        <div ng-message="required">Este campo é requerido.</div>
+	      </div>
+	    </md-input-container>
 		</div>	    
+
+			<md-input-container flex>
+        <label>Nome</label>
+        <input required name="full_name" ng-model="user.full_name">
+        <div ng-messages="userForm.full_name.$error">
+          <div ng-message="required">Este campo é requerido.</div>
+        </div>
+      </md-input-container>
+
+			<md-input-container flex>
+        <label>Aniversário</label>
+        <input type="date" required name="birthdate" ng-model="user.birthdate">
+        <div ng-messages="userForm.birthdate.$error">
+          <div ng-message="required">Este campo é requerido.</div>
+        </div>
+      </md-input-container>
 
     <div layout>
 	    <md-button class="md-raised md-primary">Entrar</md-button>
@@ -64,10 +87,6 @@ if (isset($_POST['userid']) || isset($_POST['password'])) {
 </md-content>
 
 <md-content class="md-padding">
-	<md-button><i class="mdi mdi-facebook-box"></i> Entrar com Facebook</md-button>
-  <md-button><i class="mdi mdi-google-plus"></i> Entrar com sua conta Google</md-button>
+  <md-button >Salvar registro</md-button>
 </md-content>
 
-<md-content class="md-padding" layout layout-sm="column">
-  <md-button class="md-raised" ng-href="/registrar">Registrar</md-button>
-</md-content>

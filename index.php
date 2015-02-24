@@ -12,17 +12,19 @@ for ($i= 0; $i < sizeof($scriptName); $i++) {
     unset($requestURI[$i]);
   }
 }
-
 $command = array_values($requestURI);
 
 include_once("template-head.php");
 
 switch($command[0]) {
-  case 'login' :
+  case 'entrar' :
     include_once("login-form.php");
     break;
-  case 'logout' :
+  case 'sair' :
     include_once("logout.php");
+    break;
+  case 'registrar' :
+    include_once("register-form.php");
     break;
 
   case 'profile' :
