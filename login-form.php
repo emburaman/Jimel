@@ -7,6 +7,31 @@ if (isset($_POST['userid']) || isset($_POST['password'])) {
 		$err = true;
 		$errmsg = "Preencha os campos corretamente.";
 	}
+
+  if ($_POST['userid'] != "" || $_POST['password'] != "") {
+    
+    include_once('class/db.class.php');
+
+    $db = new DB();
+    $db->query('SELECT * FROM tb_users WHERE userid = :userid AND password = :password');
+    $db->bind(':userid', $_POST['userid']);
+    $db->bind(':password', sha1($_POST['password']));
+    $row = $db->single();
+
+    if ($db->rowCount() == 1) {
+      $_SESSION['jimel']['userid'] = $row['userid'];
+      $_SESSION['jimel']['full_name'] = $row['full_name'];
+      $_SESSION['jimel']['profile'] = $row['profile'];
+      $_SESSION['jimel']['photo_path'] = $row['photo_path'];
+
+      header("Location: /");
+      die();
+    }
+    else {
+      $err = true;
+      $errmsg = "Não foi possível fazer login. Certifique-se de que os dados informados estão corretos.";
+    }
+  }
 }
 ?>
 

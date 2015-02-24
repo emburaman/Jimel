@@ -121,7 +121,7 @@ body p {
   vertical-align: middle;
 }
 
-md-toolbar button a {
+.account-box button a {
   color: #FFF;
   text-decoration: none;
 }

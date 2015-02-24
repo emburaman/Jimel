@@ -24,7 +24,7 @@
         <!-- Login/Logout User Bar -->
         <div class="account-box">
           <?php 
-          if (!isset($_SESSION['jimel']['session-id'])) {
+          if (!isset($_SESSION['jimel']['userid'])) {
           ?>
           <md-toolbar class="md-theme-indigo logged-out" ng-controller="LeftCtrl">
             <div class="buttons">
@@ -41,12 +41,12 @@
               <md-button ng-click="close()" class="">
                 <i class="mdi mdi-arrow-left"></i>
               </md-button>
-              <md-button><i class="mdi mdi-logout"></i></md-button>
+              <md-button><a href="/logout"><i class="mdi mdi-logout"></i></a></md-button>
               <md-button><i class="mdi mdi-pencil"></i></md-button>
             </div>
           </md-content>
           <md-toolbar class="md-theme-indigo">
-            <h3 class="md-toolbar-tools user-name">Lincoln Souza</h3>
+            <h3 class="md-toolbar-tools user-name"><?php echo $_SESSION['jimel']['full_name']; ?></h3>
           </md-toolbar>
           <?php } ?>
         </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 // index.php    
 
 // This is necessary when index.php is not in the root folder, but in some subfolder...
