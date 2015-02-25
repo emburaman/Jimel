@@ -2,6 +2,7 @@
 $err = false;
 $errmsg = "";
 
+
 if (isset($_POST['userid']) || isset($_POST['password'])) {
 	if ($_POST['userid'] == "" || $_POST['password'] == "") {
 		$err = true;
@@ -37,7 +38,7 @@ if (isset($_POST['userid']) || isset($_POST['password'])) {
 
 <h4>Login</h4>
 <md-content class="md-padding md-form">
-  <form novalidate name="userForm" method="POST" action="/login" <?php if ($err == true) { echo 'ng-init="showErrorToast(\'' . $errmsg . '\')"'; } ?> >
+  <form novalidate name="userForm" method="POST" action="/entrar" <?php if ($err == true) { echo 'ng-init="showErrorToast(\'' . $errmsg . '\')"'; } ?> >
     <div layout layout-sm="column">
 			<md-input-container flex>
         <label>Usuário</label>

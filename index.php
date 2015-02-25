@@ -1,5 +1,34 @@
 <?php
 session_start();
+
+// Defining some constants
+$churches  = array('sau' => 'IMeL Saúde',
+                   'sjc' => 'IMeL São José dos Campos',
+                   'cps' => 'IMeL Campinas',
+                   'sor' => 'IMeL Sorocaba',
+                   'ctb' => 'IMeL Curitiba',
+                   'ssp' => 'IMeL Jd São Paulo',
+                   'lin' => 'IMeL Lins',
+                   'mar' => 'IMeL Marília',
+                   'apu' => 'IMeL Apucarana',
+                   'pla' => 'IMeL JD Planalto',
+                   'sre' => 'IMeL São Remo',
+                   'emb' => 'IMeL Embura',
+                   'pnd' => 'IMeL Pindamonhangaba',
+                   'cam' => 'IMeL Campos do Jordão',
+                   'vil' => 'IMeL Vila Mariana',
+                   'dia' => 'IMeL Diadema',
+                   'jor' => 'IMeL Jordanópolis',
+                   'pin' => 'IMeL Pinheiros',
+                   'san' => 'IMeL Santana',
+                   'lib' => 'IMeL Liberdade',
+                   'jac' => 'IMeL Jaçanã',
+                   'mog' => 'IMeL Mogi das Cruzes',
+                   'atb' => 'IMeL Atibaia',
+                  );
+asort($churches);
+define ("CHURCHES", serialize($churches));
+
 // index.php    
 
 // This is necessary when index.php is not in the root folder, but in some subfolder...
